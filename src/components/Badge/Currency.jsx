@@ -22,7 +22,7 @@ const CurrencyConverter = ({ amount }) => {
     }, [currency]);
 
     if (exchangeRate === null) {
-        return <FadeLoader color={`#166534`}/>;
+        return <FadeLoader color={`#166534`} />;
     }
 
     const convertedAmount = convertCurrency(amount, exchangeRate);

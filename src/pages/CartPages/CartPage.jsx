@@ -13,7 +13,7 @@ export default function CartPage() {
        <h2 className='text-[#F03E3E] md:text-[35px] text-xl font-bold py-2 pt-6 text-center px-3 rounded-md border-[2px]'>
         Your cart is currently empty.
        </h2>
-       <a className='p-3 px-6 text-[#FFF] font-bold bg-[#212529] rounded-md active:scale-110'>Go To Shops</a>
+       <a href={`/shops`} className='p-3 px-6 text-[#FFF] font-bold bg-[#212529] rounded-md active:scale-110'>Go To Shops</a>
     </div>
   </div>
   )
