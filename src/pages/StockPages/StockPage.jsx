@@ -40,7 +40,7 @@ function StockPage() {
                 <a href={`/`}>Home</a><IoIosArrowForward/><a href="/shops">Shops</a>
             </div>
             {inputValue&&<SearchComponent  searchKeyword={inputValue}/>}
-            <div className="overflow-x-auto bg-white py-5 px-3 flex flex-col gap-4">
+            <div className="overflow-x-auto bg-white dark:bg-black py-5 px-3 flex flex-col gap-4">
                 <div className="container mx-auto flex flex-col gap-4">
                     {Array(Math.ceil(vendors.length / 4)).fill().map((_, rowIndex) => (
                         <div key={rowIndex} className="flex md:grid md:grid-cols-4 gap-4 overflow-x-auto">

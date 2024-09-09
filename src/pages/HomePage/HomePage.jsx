@@ -70,7 +70,7 @@ export default function HomePage() {
     }, [token]);
     return (
         !loader ? <div
-                className='w-full h-auto overflow-x-hidden hide-scrollbar bg-gradient-to-t from-[#ffffff34] via-[#ECEBEE] to-[#ECEBEE] bg-[#D1D5DB]'>
+                className='w-full h-auto overflow-x-hidden hide-scrollbar bg-gradient-to-t from-[#ffffff34] via-[#ECEBEE] to-[#ECEBEE] dark:bg-gradient-to-t dark:from-[#000000ED] dark:via-[#141511] dark:to-[#141511] #bg-[#D1D5DB]'>
                 <div className=" flex flex-row gap-2 py-4 px-3 container mx-auto">
                     <a href={`/`}>Home</a>
                     <IoIosArrowForward/>

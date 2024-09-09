@@ -13,9 +13,9 @@ function HomeSearchBar() {
     return (
         <div className="md:w-[60%] w-full">
             <div
-                className="relative flex items-center w-full h-12 rounded-lg focus-within:border-[1px] bg-[#F3F4F6] overflow-hidden">
+                className="relative flex items-center w-full h-12 rounded-lg dark:bg-[#0d0c0a] focus-within:border-[1px] bg-[#F3F4F6] overflow-hidden">
                 <input
-                    className="peer h-full w-full outline-none text-sm bg-[#F3F4F6] px-2"
+                    className="peer h-full w-full outline-none text-sm bg-[#F3F4F6] dark:bg-[#0d0c0a] px-2"
                     type="text"
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}

@@ -36,31 +36,31 @@ export default function  BlogPage () {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="md:col-span-2">
           {posts.map((post, index) => (
-            <div key={index} className="mb-6 bg-white rounded-lg shadow-md">
+            <div key={index} className="mb-6 bg-white dark:bg-black rounded-lg shadow-md">
               <img src={post.image} alt={post.title} className="w-full rounded-t-lg" />
               <div className="p-6">
-                <span className="bg-gray-200 text-[#634C9F]  text-xs font-bold mr-2 px-2.5 pt-1.5 py-0.5 rounded">{post.category}</span>
-                <h2 className="text-2xl text-[#030712]  font-bold my-2 ">{post.title}</h2>
-                <p className="text-[#4B5563]">{post.date}</p>
-                <p className="text-[#4B5563] mt-2">{post.content}</p>
+                <span className="bg-gray-200 dark:bg-gray-800 text-[#634C9F] dark:text-[#9cb360]  text-xs font-bold mr-2 px-2.5 pt-1.5 py-0.5 rounded">{post.category}</span>
+                <h2 className="text-2xl text-[#030712] dark:text-[#fcf8ed]  font-bold my-2 ">{post.title}</h2>
+                <p className="text-[#4B5563] dark:text-[#b4aa9c]">{post.date}</p>
+                <p className="text-[#4B5563] dark:text-[#b4aa9c] mt-2">{post.content}</p>
                 <button className="mt-4 text-white bg-[#166534] hover:bg-green-700 font-bold py-2 px-4 rounded transition duration-500">Read More</button>
               </div>
             </div>
           ))}
         </div>
         <aside className="md:col-span-1">
-          <div className="bg-white rounded-lg shadow-md p-6 mb-6">
+          <div className="bg-white dark:bg-black rounded-lg shadow-md p-6 mb-6">
             <h3 className="text-xl font-bold mb-4">Blog Post List</h3>
             <ul className="space-y-4">
               {posts.map((post, index) => (
                 <li key={index}>
-                  <a href="#" className="text-[#030712] hover:underline">{post.title}</a>
-                  <p className="text-gray-600 text-sm">{post.date}</p>
+                  <a href="#" className="text-[#030712] dark:text-[#fcf8ed] hover:underline">{post.title}</a>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm">{post.date}</p>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="bg-white rounded-lg shadow-md p-6">
+          <div className="bg-white dark:bg-black rounded-lg shadow-md p-6">
             <h3 className="text-xl font-bold mb-4">Social Media Widget</h3>
             <ul className="space-y-2">
               <li>

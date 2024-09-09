@@ -107,7 +107,7 @@ function Inventory() {
     ];
 
     return (
-        <div className="pb-6 px-4 flex flex-col gap-4 overflow-x-hidden">
+        <div className="pb-6 px-4 flex flex-col gap-4 min-h-[100vh] overflow-x-hidden">
             <div className={`order-1`}>
                 <div className="flex flex-row gap-2 p-4 px-0 container mx-auto">
                     <LuLayoutDashboard/>
@@ -116,7 +116,7 @@ function Inventory() {
                     <a href="/dashboard/inventory">Stock</a>
                 </div>
                 <div className={`flex justify-between container mx-auto`}>
-                    <h1 className={`flex gap-4 text-[#000] md:text-2xl text-xl font-bold`}>Stock Summary</h1>
+                    <h1 className={`flex gap-4 text-[#000] dark:text-[#fff] md:text-2xl text-xl font-bold`}>Stock Summary</h1>
                     <a href={`/dashboard/new-product`}
                        className={`flex gap-4 px-3 pt-2 rounded-md md:text-xl text-sm font-medium bg-[#166534] text-white`}>
                         Add new Product
@@ -124,7 +124,7 @@ function Inventory() {
                 </div>
             </div>
             {!loader && <div className={`container mx-auto md:grid md:grid-cols-5 flex-col gap-4 md:order-2  order-3`}>
-                <div className={`p-5 bg-white rounded-xl mb-3 col-span-2 h-full`}>
+                <div className={`p-5 bg-white dark:bg-black rounded-xl mb-3 col-span-2 h-full`}>
                     <h2 className={`flex gap-4 text-[#000] text-2xl font-bold `}><BsInboxes size={30}/>Products Summary
                     </h2>
                     <div className={`grid grid-cols-3 md:gap-8 gap-4 my-3`}>
@@ -142,11 +142,11 @@ function Inventory() {
                         </div>
                     </div>
                 </div>
-                <div className={` bg-white rounded-xl p-5 col-span-3 h-full`}>
+                <div className={` bg-white dark:bg-black rounded-xl p-5 col-span-3 h-full`}>
                     <h2 className={`flex gap-4 text-[#000] text-2xl font-bold `}><MdOutlineCategory size={30} />Categories</h2>
                     <div className="flex md:gap-6 gap-4 my-3 overflow-x-auto whitespace-nowrap">
                         {categories.map((category, index) => (
-                            <span key={index} className="inline-block md:px-6 px-5 pt-4 pb-2 bg-white border-[1.2px] rounded-md">
+                            <span key={index} className="inline-block md:px-6 px-5 pt-4 pb-2 bg-white dark:bg-black border-[1.2px] rounded-md">
                                 {category}
                             </span>
                         ))}
@@ -154,7 +154,7 @@ function Inventory() {
                 </div>
             </div>}
             {/* Inventory List */}
-            {!loader&&<div className={`relative bg-white rounded-md container mx-auto overflow-x-scroll md:order-3 order-2`}>
+            {!loader&&<div className={`relative bg-white #dark:bg-black text-black dark:text-white rounded-md container mx-auto overflow-x-scroll md:order-3 order-2`}>
                 <div style={{ height: 500, width: '100%' }} className={`relative `}>
                     <DataGrid
                         rows={inventories}

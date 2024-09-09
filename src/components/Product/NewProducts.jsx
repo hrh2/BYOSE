@@ -3,6 +3,7 @@ import React, { memo } from 'react';
 import ProductCard00 from "./Cards/ProductCard00";
 import ProductCard01 from "./Cards/ProductCard01";
 import ContinueLink from "../Buttons/Continue";
+import DivisionHeader from "../Header/DivisionHeader.jsx";
 
 const MemoizedProductCard00 = memo(ProductCard00);
 const MemoizedProductCard01 = memo(ProductCard01);
@@ -16,17 +17,9 @@ export default function NewProducts({ inventories }) {
 
   return (
       <div className="max-w-full mx-auto flex flex-col md:py-6 py-3 p-2">
-        <div className="flex flex-row container mx-auto justify-between">
-          <div className="flex flex-row gap-4 py-4">
-            <span className="text-[#030712] font-bold md:text-[21px] text-[.8rem]">New Picks</span>
-            <span className="text-[#696d75] md:text-base text-[.7rem]">New products with updated stocks.</span>
-          </div>
-          <div>
-            <MemoizedContinueLink className={"bg-[#FFF] text-[.7rem]"} text={<>View&nbsp;all</>} link={`/products`} />
-          </div>
-        </div>
+        <DivisionHeader title={`New Picks`} description={`New products with updated stocks.`} link={``}/>
         <div className="max-w-full overflow-x-auto">
-          <div className="grid md:grid-cols-2 md:w-full sm:grid-cols-1 sm:w-full grid-cols-2 w-[400vw] bg-[#FFF] rounded-md">
+          <div className="grid md:grid-cols-2 md:w-full sm:grid-cols-1 sm:w-full grid-cols-2 w-[400vw] bg-[#FFF] dark:bg-black rounded-md">
             {displayedInventories.length > 0 && (
                 <div className="flex-shrink-0 w-full md:w-auto container mx-auto grid md:grid-cols-5 grid-cols-2 p-2 gap-0">
                   <div className="md:col-span-2">
@@ -34,7 +27,6 @@ export default function NewProducts({ inventories }) {
                         inventory={displayedInventories[0]}
                         s={"h-full border-[3px] rounded-r-none md:p-5 md:w-full sm:w-full w-[95vw] pt-6 pb-4 px-3"}
                         badge={"org"}
-                        cart={false}
                     />
                   </div>
                   {displayedInventories.length > 1 && (
@@ -62,7 +54,6 @@ export default function NewProducts({ inventories }) {
                         inventory={displayedInventories[3]}
                         s={"h-full border-[3px] rounded-r-none md:p-5 md:w-full sm:w-full w-[95vw] pt-6 pb-4 px-3"}
                         badge={"org"}
-                        cart={false}
                     />
                   </div>
                   {displayedInventories.length > 4 && (

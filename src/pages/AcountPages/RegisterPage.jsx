@@ -134,11 +134,11 @@ export default function  RegisterPage() {
 				</div>
 				<div className="my-4">
 					<label htmlFor="storename" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Store Name</label>
-					<input type="text" id="storename" name={`storeName`} value={data.storeName} onChange={handleOnChange} className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Enter your password" required/>
+					<input type="text" id="storename" name={`storeName`} value={data.storeName} onChange={handleOnChange} className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Store name" required/>
 				</div>
 				<div className="my-4">
 					<label htmlFor="storeDescription" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Store Description</label>
-					<input type="text" id="storeDescription" name={`storeDescription`} value={data.storeDescription} onChange={handleOnChange} className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Enter your password" required/>
+					<textarea id="storeDescription" name={`storeDescription`} value={data.storeDescription} onChange={handleOnChange} rows={4} className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Description of your store" required/>
 				</div>
 			</div>:null}
 			<p className="text-center py-4">Your personal data will be used to support your experience throughout this

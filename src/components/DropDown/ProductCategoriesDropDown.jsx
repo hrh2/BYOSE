@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 
 // eslint-disable-next-line react/prop-types
-const ProductCategoriesDropDown = ({ items, search, stylee }) => {
+const ProductCategoriesDropDown = ({ items, search,  className }) => {
   const [categories, setCategories] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
@@ -40,7 +40,7 @@ const ProductCategoriesDropDown = ({ items, search, stylee }) => {
       <div className="relative group">
         <button
             id="dropdown-button"
-            className={`inline-flex pt-3 justify-center w-full px-4 py-2 text-sm font-medium text-gray-700 bg-white border-0 border-gray-300 rounded-md ${stylee}`}
+            className={`inline-flex pt-3 justify-center w-full px-4 py-2 text-sm font-medium text-gray-700 bg-white dark:text-gray-200 dark:bg-black border-0 border-gray-300 rounded-md ${className}`}
             onClick={toggleDropdown}
         >
           <span className="mr-2 pt-2 text-[18px] font-semibold">{selected || items[0]}</span>
@@ -61,11 +61,11 @@ const ProductCategoriesDropDown = ({ items, search, stylee }) => {
         {isOpen && (
             <div
                 id="dropdown-menu"
-                className="absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 space-y-1 z-40"
+                className="absolute right-0 mt-2 rounded-md shadow-lg bg-white dark:bg-black ring-1 ring-black ring-opacity-5 p-1 space-y-1 z-40"
             >
               <input
                   id="search-input"
-                  className="block w-full px-4 py-2 text-gray-800 border rounded-md border-gray-300 focus:outline-none"
+                  className="block w-full px-4 py-2 text-gray-800 dark:text-gray-100 border rounded-md border-gray-300 focus:outline-none"
                   type="text"
                   placeholder={search}
                   value={searchTerm}
@@ -78,7 +78,7 @@ const ProductCategoriesDropDown = ({ items, search, stylee }) => {
                       <a
                           key={item}
                           href={`/Categories/${item !== 'Categories' ? item : ''}`}
-                          className="block px-4 py-2 text-gray-700 hover:bg-gray-100 active:bg-blue-100 cursor-pointer rounded-md"
+                          className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 active:bg-blue-100 cursor-pointer rounded-md"
                           onClick={() => handleSelected(item)}
                       >
                         {item}

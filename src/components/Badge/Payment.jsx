@@ -5,7 +5,7 @@ import { MdPayment } from 'react-icons/md'
 
 export default function Payment() {
   return (
-    <div className='flex flex-col rounded-md border-[#E5E7EB] border-[2px] text-[#6B7280]'>
+    <div className='flex flex-col rounded-md border-[#E5E7EB] border-[2px] text-[#6B7280] dark:text-[#948d7f] '>
       <div className='flex gap-4 p-3 border-b-[2px] md:min-h-[8vh]'>
         <MdPayment size={32} />
         <p>

@@ -10,7 +10,7 @@ import ColdSale from "../../Badge/ColdSale";
 // eslint-disable-next-line react/prop-types
 export default function ProductCard01({s,badge,inventory}) {
     return (
-      <div className={`flex flex-col bg-[#FFFFFF]  rounded-lg mx-auto ${s}`}>
+      <div className={`flex flex-col bg-[#FFFFFF] dark:bg-[#000]  rounded-lg mx-auto ${s}`}>
         <div className="grid grid-cols-2 gap-2">
             <div className="">
                 <div className="flex flex-row justify-between ">
@@ -30,7 +30,7 @@ export default function ProductCard01({s,badge,inventory}) {
             </div>
             <div className={`flex flex-col justify-between`}>
                 {/* eslint-disable-next-line react/prop-types */}
-                <h2 className="w-full text-justify text-[17px] font-bold text-[#030712]">{inventory?inventory.product.name:'...'}</h2>
+                <h2 className="w-full text-justify text-[17px] font-boldtext-[#030712] dark:text-[#fcf9ed]">{inventory?inventory.product.name:'...'}</h2>
                 <div className="py-2">
                     {/* eslint-disable-next-line react/prop-types */}
                     <Star percentage={inventory?inventory.product.productRate:0}/>

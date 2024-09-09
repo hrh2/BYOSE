@@ -10,7 +10,7 @@ function DashboardHeader({ onToggleSidebar }) {
         };
 
         return (
-            <nav className="bg-white shadow-md p-4 flex items-center justify-between">
+            <nav className="bg-white dark:bg-black shadow-md p-4 flex items-center justify-between">
                 <button
                     className="text-gray-600 hover:text-gray-800"
                     onClick={onToggleSidebar}

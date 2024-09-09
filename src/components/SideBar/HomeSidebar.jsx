@@ -27,14 +27,14 @@ export default function HomeSidebar({ isOpen, toggleSidebar }) {
           <Sidebar.Item href="#" className=" justify-start align-middle"  icon={SiHomebridge}>
             Home
           </Sidebar.Item>
-          <Sidebar.Item href="#" className=" justify-start align-middle" icon={FcMoneyTransfer}>
-            <CurrencySelectionDropDown items={['RWF','USD', 'EUR', 'JPY', 'GBP', 'AUD', 'CAD', 'CHF', 'CNY', 'HKD', 'NZD']} search="Currency" />
+          <Sidebar.Item href="#" className=" justify-start align-middle dark:hover:bg-gray-800" icon={FcMoneyTransfer}>
+            <CurrencySelectionDropDown className={`dark:!bg-gray-800`} items={['RWF','USD', 'EUR', 'JPY', 'GBP', 'AUD', 'CAD', 'CHF', 'CNY', 'HKD', 'NZD']} search="Currency" />
           </Sidebar.Item>
-          <Sidebar.Item href="#" className=" justify-start align-middle" icon={HiShoppingBag}>
-            <StockSelectionDropDown items={[{id:111,name:'shops'}]} className="text-[18px] font-semibold text-[#030712]" search="Search Page.."/>
+          <Sidebar.Item href="#" className=" justify-start align-middle dark:hover:bg-gray-800" icon={HiShoppingBag}>
+            <StockSelectionDropDown items={[{id:111,name:'shops'}]} className="text-[18px] font-semibold text-[#030712] dark:!bg-gray-800" search="Search stores.."/>
           </Sidebar.Item>
-          <Sidebar.Item href="#" className=" justify-start align-middle" icon={MdOutlineCategory}>
-            <ProductCategoriesDropDown items={['Categories']} stylee="text-[18px] font-semibold text-[#030712]" search="Search Page.."/>
+          <Sidebar.Item href="#" className=" justify-start align-middle dark:hover:bg-gray-800" icon={MdOutlineCategory}>
+            <ProductCategoriesDropDown className={`text-[18px] font-semibold #text-[#030712] dark:!bg-gray-800`} items={['Categories']} search="Search categories.."/>
           </Sidebar.Item>
           {!token&&
           <Sidebar.Item href="/login" className=" justify-start align-middle" icon={HiArrowSmRight}>

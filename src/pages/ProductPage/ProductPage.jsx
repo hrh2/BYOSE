@@ -54,7 +54,7 @@ export default function ProductPage() {
     }
 
     return (
-      <div className='w-[100vw] flex- flex-col gap-2 bg-white text-[#000]'>
+      <div className='w-[100vw] flex- flex-col gap-2 bg-white dark:bg-black text-[#000] dark:text-[#fff]'>
           <div className=" flex flex-row gap-2 py-4 container mx-auto">
               <a href={`/`}>Home</a>
               <IoIosArrowForward/>
@@ -75,7 +75,7 @@ export default function ProductPage() {
                   </div>
               </div>
               <div className='flex flex-col gap-3'>
-                  <h2 className='font-bold md:text-[41px] text-[#030712]'>{inventory?inventory.product.name:"waiting ..."}</h2>
+                  <h2 className='font-bold md:text-[41px] text-[#030712] dark:text-[#fcf8ed]'>{inventory?inventory.product.name:"waiting ..."}</h2>
                   <div>
                       <Star percentage={inventory?inventory.product.productRate:0}/>
                   </div>

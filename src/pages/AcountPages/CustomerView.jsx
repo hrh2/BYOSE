@@ -20,31 +20,32 @@ function CustomerView({className,user}) {
     return (
         <div className={`flex flex-col md:flex-row ${className}`}>
             {/* Sidebar */}
-            <aside className="w-full md:w-1/4 bg-white p-4 mb-6 md:mb-0">
+            <aside className="w-full md:w-1/4 p-4 mb-6 md:mb-0">
                 <div className="mb-6">
                     <div className="flex items-center mb-4">
                         <FiUser className="text-2xl mr-2"/>
                         <div>
                             <p className="text-sm text-gray-600">Welcome back,</p>
+                            {/* eslint-disable-next-line react/prop-types */}
                             <p className="text-lg font-semibold">{user.email}</p>
                         </div>
                     </div>
                 </div>
-                <ul className="rounded-lg border-[2px] p-4">
+                <ul className="rounded-lg border-[2px] p-4 bg-white dark:bg-black">
                     <li className="mb-4">
-                        <a href="#" className="flex items-center text-gray-700 hover:text-blue-600">
+                        <a href="#" className="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-600">
                             <FiHome className="mr-2"/>
                             Home
                         </a>
                     </li>
                     <li className="mb-4">
-                        <a href="#" className="flex items-center text-gray-700 hover:text-blue-600">
+                        <a href="#" className="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-600">
                             <FiList className="mr-2"/>
                             Orders
                         </a>
                     </li>
                     <li className="mb-4">
-                        <a href="#" className="flex items-center text-gray-700 hover:text-blue-600">
+                        <a href="#" className="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-600">
                             <FiSettings className="mr-2"/>
                             Setting
                         </a>
@@ -64,7 +65,7 @@ function CustomerView({className,user}) {
                 <h2 className="text-2xl font-bold mb-4">Update account to Vendor</h2>
                 <form className="space-y-4">
                     <div>
-                        <label className="block text-sm font-medium text-gray-700">Owner First Name *</label>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Owner First Name *</label>
                         <input
                             type="text"
                             name={`userFirstName`}
@@ -75,7 +76,7 @@ function CustomerView({className,user}) {
                         />
                     </div>
                     <div>
-                        <label className="block text-sm font-medium text-gray-700">Owner Last Name *</label>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Owner Last Name *</label>
                         <input
                             type="text"
                             value={vendor.userLastName}
@@ -86,7 +87,7 @@ function CustomerView({className,user}) {
                         />
                     </div>
                     <div>
-                        <label className="block text-sm font-medium text-gray-700">Shop Name *</label>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Shop Name *</label>
                         <input
                             type="text"
                             value={vendor.storeName}
@@ -97,7 +98,7 @@ function CustomerView({className,user}) {
                         />
                     </div>
                     <div>
-                        <label className="block text-sm font-medium text-gray-700">Google profile Link</label>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Google profile Link</label>
                         <input
                             type="text"
                             value={vendor.url}
@@ -108,7 +109,7 @@ function CustomerView({className,user}) {
                         />
                     </div>
                     <div>
-                        <label className="block text-sm font-medium text-gray-700">Owner Phone Number *</label>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Owner Phone Number *</label>
                         <input
                             type="text"
                             value={user.phone}

@@ -49,14 +49,14 @@ function VendorOrders() {
     ];
 
     return (
-        <div className={`w-full  py-6`}>
+        <div className={`w-full min-h-[100vh]  py-6`}>
             <div className="flex flex-row gap-2 p-4 md:px-0 container mx-auto">
                 <LuLayoutDashboard/>
                 <a href={`/dashboard`}>Dashboard</a>
                 <IoIosArrowForward/>
                 <a href="/dashboard/orders">Orders</a>
             </div>
-            <div className={`container mx-auto  bg-white py-3 rounded-md`}>
+            <div className={`container mx-auto  bg-white dark:bg-black py-3 rounded-md`}>
                 <div className={`grid grid-cols-3 md:gap-8 gap-4 my-3`}>
                     <div className={`flex flex-col gap-2 mx-auto`}>
                         <span className={`text-md`}>Pending</span>

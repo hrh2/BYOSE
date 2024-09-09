@@ -6,11 +6,11 @@ import Organic from "../../Badge/Organic";
 import Star from "../../Badge/Star";
 import Discount from "../../Badge/Discount";
 import ColdSale from "../../Badge/ColdSale";
-import AddToCart01 from "../../Buttons/AddToCart01";
+import AddToCart from "../../Buttons/AddToCart.jsx";
 // eslint-disable-next-line react/prop-types
-export default function ProductCard00({s,badge,cart,inventory}) {
+export default function ProductCard00({s,badge,inventory}) {
   return (
-    <div className={`flex flex-col bg-[#FFFFFF] pt-6 pb-14 rounded-lg gap-3 mx-auto ${s}`}>
+    <div className={`flex flex-col bg-[#FFFFFF] dark:bg-[#000] pt-6 pb-14 rounded-lg gap-3 mx-auto ${s}`}>
       <div className="flex flex-row justify-between ">
           {/* eslint-disable-next-line react/prop-types */}
         <span className="bg-red-500 text-white text-center font-semibold text-lg rounded-3xl px-3 py-1">{inventory?inventory.product.productRate:0}%</span>
@@ -23,16 +23,16 @@ export default function ProductCard00({s,badge,cart,inventory}) {
       {badge==="org" && <Organic text = {inventory?inventory.product.category:'...'}/>}
           {/* eslint-disable-next-line react/prop-types */}
       {badge==="cold" && <ColdSale text = {inventory?inventory.product.category:'...'}/>}
-        {!cart&&<FaPlusCircle size={30} className=" cursor-pointer" />}
+        <AddToCart/>
       </div>
       <div className="py-2">
           {/* eslint-disable-next-line react/prop-types */}
         <Star percentage={inventory?inventory.product.productRate:0}/>
       </div>
         {/* eslint-disable-next-line react/prop-types */}
-      <h2 className="w-full text-justify text-[19px] font-bold text-[#030712]">{inventory?inventory.product.name:'...'}</h2>
+      <h2 className="w-full text-justify text-[19px] font-bold text-[#030712] dark:text-[#fcf9ed]">{inventory?inventory.product.name:'...'}</h2>
         {/* eslint-disable-next-line react/prop-types */}
-      <p className="text-[#4B5563] text-[16px] font-normal"> {inventory?inventory.product.description:'...'}.</p>
+      <p className="text-[#4B5563] dark:text-[#c5bbac] text-[16px] font-normal"> {inventory?inventory.product.description:'...'}.</p>
         {/* eslint-disable-next-line react/prop-types */}
       <Discount current={inventory?inventory.product.sellingPrice:0} old={inventory?inventory.product.sellingPrice+10:0} s={"text-lg py-3"}/>
       <div className="py-3 w-full  mx-auto">
@@ -40,11 +40,10 @@ export default function ProductCard00({s,badge,cart,inventory}) {
         <p className=" text-[#9CA3AF] text-[14px]">{inventory&&inventory.quantity<=3?"This product is about to run out":"Enough"}</p>
         <div className="w-full h-[6px] bg-gradient-to-r from-[#FFD200] to-[#DC2626]">
             {/* eslint-disable-next-line react/prop-types */}
-        <p className="text-[15px] py-4 text-[#6B7280]">available only: <span className="text-[#030712] font-bold text-[20px]">{inventory?inventory.quantity:'...'}</span></p>
+        <p className="text-[15px] py-4 text-[#6B7280]">available only: <span className="text-[#030712] dark:text-[#fcf9ed] font-bold text-[20px]">{inventory?inventory.quantity:'...'}</span></p>
         </div>
       </div>
       <div className="md:py-3 pt-3">
-        {cart&&<AddToCart01/>}
       </div>
         <div>
             {/* eslint-disable-next-line react/prop-types */}

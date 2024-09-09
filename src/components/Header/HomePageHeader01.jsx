@@ -18,7 +18,7 @@ export default function HomePageHeader01({className}) {
 
   },[token])
   return (
-    <div className={`flex flex-col gap-2 !w-full  relative ${className}`}>
+    <div className={`bg-white dark:bg-black dark:text-white flex flex-col gap-2 !w-full  relative ${className}`}>
       {/* Top bar */}
       <div className="border-b-[1.5px] p-2">
         <div className="md:w-[70%] w-[96%] mx-auto flex md:flex-row flex-col gap-4 justify-between">
@@ -42,7 +42,7 @@ export default function HomePageHeader01({className}) {
       <div className={`md:flex md:flex-row flex-col justify-center gap-4 md:w-[70%] w-[95%] mx-auto pt-2 flex`}>
         <div className="flex justify-center md:justify-start">
           <a href={`/accessibility`} className="flex flex-row cursor-pointer active:cursor-wait">
-            <SlLocationPin size={32} className="text-[#030712]" />
+            <SlLocationPin size={32} className="text-[#030712] dark:text-[#ffffff]" />
             <span className="flex flex-col justify-center align-middle">
               <span className="text-[13px] font-normal text-center">Accessible to</span>
               <span className="text-[15px] font-medium text-center text-[#030712]">All</span>
@@ -52,7 +52,7 @@ export default function HomePageHeader01({className}) {
         <HomeSearchBar/>
         <div className="flex flex-row gap-4 justify-center md:justify-start">
           <a href={token?`/account`:`/login`} className="flex flex-row cursor-pointer active:cursor-wait">
-            <CiUser size={32} className="text-[#030712] my-auto" />
+            <CiUser size={32} className="text-[#030712] dark:text-[#ffffff] my-auto" />
             {token?null:<span className="flex flex-col justify-center align-middle">
               <span className="text-[11px] font-normal text-center">Sign in</span>
               <span className="text-[13px] font-medium text-center text-[#030712]">Account</span>
@@ -62,14 +62,14 @@ export default function HomePageHeader01({className}) {
             <div className="w-[20px] h-[20px] #pt-[7px] flex justify-center items-center text-center text-[15px] rounded-full absolute top-[3px] right-[-6px] bg-red-500 text-white">
               12
             </div>
-            <FaRegHeart size={32} className="text-[#030712]" />
+            <FaRegHeart size={32} className="text-[#030712] dark:text-[#ffffff]" />
           </a>}
           {token&&<a href={`/cart`} className="relative aspect-square cursor-pointer">
             <div
                 className="w-[20px] h-[20px] #pt-[7px] flex justify-center items-center text-center text-[15px] rounded-full absolute top-[3px] right-[-4px] bg-red-500 text-white">
               12
             </div>
-            <FaOpencart size={32} className="text-[#030712]"/>
+            <FaOpencart size={32} className="text-[#030712] dark:text-[#ffffff]"/>
           </a>}
         </div>
       </div>

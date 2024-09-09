@@ -58,7 +58,7 @@ function CustomersPage() {
             <IoIosArrowForward/>
             <a href="/dashboard/customers">Customers</a>
         </div>
-        <div className={`container mx-auto  bg-white py-3 rounded-md p-4 flex md:flex-row flex-col gap-4`}>
+        <div className={`container mx-auto  bg-white dark:bg-black py-3 rounded-md p-4 flex md:flex-row flex-col gap-4`}>
             <UserCardBg/>
             {/* eslint-disable-next-line no-undef */}
             <div className={`w-full md:p-6 p-4`}>

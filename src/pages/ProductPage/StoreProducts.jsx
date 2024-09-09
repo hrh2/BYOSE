@@ -51,7 +51,7 @@ function StoreProducts() {
                     <a href={`/stores/${vendorID}`}>{capitalizeLastThreeLetters(vendorID)}</a>
                 </div>
                 {inputValue&&<SearchComponent  searchKeyword={inputValue}/>}
-                <h1 className="text-4xl font-bold text-gray-800 mb-4 flex gap-3 container mx-auto">
+                <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-200 mb-4 flex gap-3 container mx-auto">
                     {vendor.storeName}
                     {vendor.isVerified ? (
                         <MdVerified size={25} className={`text-green-700`} title={`Verified Shop`} />
@@ -61,7 +61,7 @@ function StoreProducts() {
                 </h1>
                 <div className="flex flex-col gap-2 p-4 container mx-auto">
                     <h2 className="text-2xl font-semibold mb-2">Purchase here</h2>
-                    <p className="text-gray-600 mb-4">Browse through our selection of products and find what you need. Enjoy exclusive offers and discounts!</p>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4">Browse through our selection of products and find what you need. Enjoy exclusive offers and discounts!</p>
                     <a href={`/shops/${vendorID}`} className="text-blue-500 hover:underline mt-4">Visit the Store</a>
                     <div className="overflow-x-auto w-full pb-3">
                         <div className="grid md:grid-cols-3 gap-3">

@@ -36,7 +36,7 @@ export default function Categories() {
   };
 
   return (
-    <div className="max-w-full p-8 py-8 overflow-x-hidden h-auto bg-[#FFF]">
+    <div className="max-w-full p-8 py-8 overflow-x-hidden h-auto bg-[#FFF] dark:bg-[#000]">
       <Slider {...settings}>
         {productCategories.map((category, index) => (
           <a key={index + category.id} href={`/categories/${category.name}`} className="md:w-[10rem] md:px-6 px-3">
@@ -46,7 +46,7 @@ export default function Categories() {
                 className="object-cover bg-[#D1D5DB] mx-auto object-center aspect-square rounded-full"
                 alt={category.name}
               />
-              <h2 className='text-[#030712] text-center font-bold py-4'>{category.name}</h2>
+              <h2 className='text-[#030712] dark:text-[#fdf9ed] text-center font-bold py-4'>{category.name}</h2>
             </div>
           </a>
         ))}

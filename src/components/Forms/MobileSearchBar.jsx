@@ -12,7 +12,7 @@ function MobileSearchBar() {
     };
     return (
         <input
-            className="peer h-full w-full outline-none text-sm bg-[#F3F4F6] px-2"
+            className="peer h-full w-full outline-none text-sm bg-[#F3F4F6] dark:bg-[#0c0b09] px-2"
             type="text"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}

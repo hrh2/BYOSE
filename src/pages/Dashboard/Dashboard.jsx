@@ -80,7 +80,7 @@ function Dashboard() {
                 <QuantityBg title={"Re Stock"} value={data.lowStockProducts}
                             icon={<MdProductionQuantityLimits size={40} className={`my-auto`}/>}/>
             </div>
-            <div className="overflow-x-auto bg-white py-5 px-3">
+            <div className="overflow-x-auto bg-white dark:bg-black py-5 px-3">
                 <div
                     className="container mx-auto grid grid-flow-col auto-cols-[90%] sm:auto-cols-[60%] md:grid-cols-4 gap-4">
                     {data.inventories.slice(2, 6).map((inventory, index) => (
