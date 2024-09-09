@@ -17,7 +17,7 @@ function ImageSlicer({className,images}) {
             <Slider {...settings}>
                 {/* eslint-disable-next-line react/prop-types */}
                 {images.map((image, index) => (
-                    <img key={index} src={image} className={` max-h-[40vh] object-contain object-center`} alt={"shop images"}/>
+                    <img key={index} src={image} className={` max-h-[40vh] object-contain object-center md:rounded-2xl rounded-xl`}  alt={"shop images"}/>
                 ))}
             </Slider>
         </div>

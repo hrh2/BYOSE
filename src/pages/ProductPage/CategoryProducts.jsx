@@ -1,15 +1,18 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react';
 import {fetchData, shuffleArray} from "../../utils/helpers.js";
-import { developmentSevers } from "../../services/api.js";
+import { servers } from "../../services/api.js";
 import ProductCard01 from "../../components/Product/Cards/ProductCard01.jsx";
 import { MdArrowForward } from 'react-icons/md';
 import { useParams } from 'react-router-dom';
 import {FadeLoader} from "react-spinners";
 import {usePopup} from "../../context/PopupContext.jsx";
 import {IoIosArrowForward} from "react-icons/io";
+import {useInput} from "../../context/InputContext.jsx";
+import SearchComponent from "../../components/SearchingSorting/SearchComponent.jsx";
 
 const CategoryProducts = () => {
+    const { inputValue } = useInput();
     const { category } = useParams();  // Get category from request params
     const { showPopup } = usePopup();
     const [products, setProducts] = useState([]);
@@ -23,7 +26,7 @@ const CategoryProducts = () => {
         async function main() {
             try {
                 setLoader(true);
-                const result = await fetchData(`${developmentSevers.activities}/api/inventory`, token);
+                const result = await fetchData(`${servers.activities}/api/inventory`, token);
                 if (result.error) {
                     showPopup(result.error,"#00ff00","#fff");
                 } else {
@@ -55,6 +58,7 @@ const CategoryProducts = () => {
                 <IoIosArrowForward/>
                 <a href={`/categories/${category}`}>{category}</a>
             </div>
+            {inputValue&&<SearchComponent  searchKeyword={inputValue}/>}
             {loader && <div className={`container  mx-auto flex justify-center align-middle items-center min-h-[50vh]`}>
                 <FadeLoader color="#166534" size={30}/>
             </div>}

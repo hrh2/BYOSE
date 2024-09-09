@@ -11,12 +11,15 @@ import { RiShare2Line } from 'react-icons/ri'
 import TabComponent from '../../components/Badge/TabComponent'
 import {useParams} from "react-router-dom";
 import {IoIosArrowForward} from "react-icons/io";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import { capitalizeLastThreeLetters, fetchData} from "../../utils/helpers.js";
-import {developmentSevers} from "../../services/api.js";
+import {servers} from "../../services/api.js";
 import {FadeLoader} from "react-spinners";
 import {usePopup} from "../../context/PopupContext.jsx";
+import {useInput} from "../../context/InputContext.jsx";
+import SearchComponent from "../../components/SearchingSorting/SearchComponent.jsx";
 export default function ProductPage() {
+    const { inputValue } = useInput();
     const {productID} = useParams()
     const { showPopup } = usePopup();
     const token = localStorage.getItem('byose_client_token');
@@ -28,8 +31,8 @@ export default function ProductPage() {
         async function main() {
             try {
                 setLoader(true);
-                const result = await fetchData(`${developmentSevers.activities}/api/inventory/${productID}`, token);
-                const reviews = await fetchData(`${developmentSevers.activities}/api/reviews/${productID}`, token)
+                const result = await fetchData(`${servers.activities}/api/inventory/${productID}`, token);
+                const reviews = await fetchData(`${servers.activities}/api/reviews/${productID}`, token)
                 if (result.error) {
                     showPopup(result.error,"#00ff00","#fff");
                 } else {
@@ -51,7 +54,7 @@ export default function ProductPage() {
     }
 
     return (
-      <div className='w-[100vw] bg-white text-[#000]'>
+      <div className='w-[100vw] flex- flex-col gap-2 bg-white text-[#000]'>
           <div className=" flex flex-row gap-2 py-4 container mx-auto">
               <a href={`/`}>Home</a>
               <IoIosArrowForward/>
@@ -59,6 +62,7 @@ export default function ProductPage() {
               <IoIosArrowForward/>
               <a href={`/products/${productID}`}>...{capitalizeLastThreeLetters(productID)}</a>
           </div>
+          {inputValue&&<SearchComponent  searchKeyword={inputValue}/>}
           {/* 2 div */}
           {!loader ? inventory && <div className='grid md:grid-cols-2 grid-cols-1 gap-4 w-full p-3'>
               <div className='flex flex-col gap-2'>
@@ -80,7 +84,7 @@ export default function ProductPage() {
                   {/*    {inventory?inventory.product.:"waiting ..."}*/}
                   {/*</p>*/}
                   <div>
-                      <Discount current={"56"} old={"35"}/>
+                      <Discount current={56} old={35}/>
                   </div>
                   <div>
                       {false&&<button className='text-white p-3 font-bold bg-[#16A34A] rounded-md'>Order on WhatsApp</button>}

@@ -1,9 +1,14 @@
 import { FaMapMarkerAlt, FaInfoCircle } from 'react-icons/fa';
 import StaticMapContainer from "../../components/Maps/StaticMapContainer.jsx";
+import {useInput} from "../../context/InputContext.jsx";
+import SearchComponent from "../../components/SearchingSorting/SearchComponent.jsx";
+import React from "react";
 
 export default function Accessibility() {
+    const { inputValue } = useInput();
     return (
-        <div className="p-6 container mx-auto">
+        <div className="p-6 container flex flex-col mx-auto">
+            {inputValue&&<SearchComponent  searchKeyword={inputValue}/>}
             <h2 className="text-2xl font-bold flex items-center mb-4">
                 <FaMapMarkerAlt className="mr-2 text-blue-500" />
                 Our Company’s Operational Area

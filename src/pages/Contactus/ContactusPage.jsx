@@ -1,9 +1,14 @@
 import 'tailwindcss/tailwind.css';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaCreditCard, FaTags, FaShieldAlt, FaShippingFast } from 'react-icons/fa';
+import {useInput} from "../../context/InputContext.jsx";
+import SearchComponent from "../../components/SearchingSorting/SearchComponent.jsx";
+import React from "react";
 
 export default function ContactPage(){
+  const { inputValue } = useInput();
   return (
     <div className="container mx-auto p-6">
+      {inputValue&&<SearchComponent  searchKeyword={inputValue}/>}
       <h2 className="text-3xl font-bold text-center mb-8">You can ask us questions</h2>
       <p className="text-center mb-4">Contact us for all your questions and opinions, or you can solve your problems in a shorter time with our contact offices.</p>
       <hr/>

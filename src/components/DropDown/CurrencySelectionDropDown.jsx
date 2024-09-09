@@ -1,10 +1,13 @@
-import {useState} from "react";
+// components/CurrencySelectionDropDown.js
+// eslint-disable-next-line no-unused-vars
+import React, { useState, useContext, useEffect } from 'react';
+import {CurrencyContext} from "../../context/CurrencyContext.jsx";
 
 // eslint-disable-next-line react/prop-types
-function CurrencySelectionDropDown({items,search,className}) {
+function CurrencySelectionDropDown({ items, search, className }) {
     const [isOpen, setIsOpen] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
-    const [selected, setSelected] = useState('');
+    const { currency, setCurrency } = useContext(CurrencyContext);
 
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
@@ -15,10 +18,13 @@ function CurrencySelectionDropDown({items,search,className}) {
     };
 
     const handleSelected = (value) => {
-        setSelected(value);
+        setCurrency(value);
         setIsOpen(false); // Close the dropdown after selecting an item
     };
 
+    useEffect(() => {
+        setCurrency(localStorage.getItem('selectedCurrency') || items[0]);
+    }, []);
 
     return (
         <div className="relative group ">
@@ -27,7 +33,7 @@ function CurrencySelectionDropDown({items,search,className}) {
                 className={`inline-flex pt-3 justify-center w-full px-4 py-2 text-sm font-medium text-gray-700 bg-white border-0 border-gray-300 rounded-md ${className}`}
                 onClick={toggleDropdown}
             >
-                <span className="mr-2 pt-2 text-[18px] font-semibold">{selected || items[0]}</span>
+                <span className="mr-2 pt-2 text-[18px] font-semibold">{currency}</span>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="w-5 h-5 ml-2 -mr-1"
@@ -74,4 +80,5 @@ function CurrencySelectionDropDown({items,search,className}) {
         </div>
     );
 }
+
 export default CurrencySelectionDropDown;

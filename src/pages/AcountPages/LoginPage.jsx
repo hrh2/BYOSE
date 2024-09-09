@@ -1,9 +1,12 @@
-import {useState} from "react";
+import React, {useState} from "react";
 import Axios from 'axios'
-import {developmentSevers} from "../../services/api.js";
+import {servers} from "../../services/api.js";
 import {usePopup} from "../../context/PopupContext.jsx";
+import {useInput} from "../../context/InputContext.jsx";
+import SearchComponent from "../../components/SearchingSorting/SearchComponent.jsx";
 export default function LoginPage() {
     const { showPopup } = usePopup();
+    const { inputValue } = useInput();
     const [loader, setLoader] = useState(false);
     const [data, setData] = useState({
         email_phone: '',
@@ -19,7 +22,7 @@ export default function LoginPage() {
         event.preventDefault();
         setLoader(true);
         try {
-            const response = await Axios.post(`${developmentSevers.activities}/api/login`, data);
+            const response = await Axios.post(`${servers.activities}/api/login`, data);
             const token = response.data.token;
             showPopup(response.data.message,"#00ff00","#fff");
             localStorage.setItem('byose_client_token', token);
@@ -33,7 +36,8 @@ export default function LoginPage() {
         }
     };
     return (
-  <div className="min-h-[60vh] py-8 flex items-center justify-center w-full dark:bg-gray-950">
+  <div className="min-h-[60vh] py-8 flex flex-col gap-2 items-center justify-center w-full dark:bg-gray-950">
+      {inputValue&&<SearchComponent  searchKeyword={inputValue}/>}
       <div className="bg-white dark:bg-gray-900  px-8 py-6 md:w-[40%] sm:w-[60%] w-[90%]">
           <h1 className="text-2xl font-bold text-center mb-4 dark:text-gray-200 flex gap-5 justify-center">Login <a href={`/register`} className="text-[#9CA3AF] cursor-pointer">Register</a></h1>
           <p className="text-center py-4">If you have an account, sign in with your username or email address.</p>

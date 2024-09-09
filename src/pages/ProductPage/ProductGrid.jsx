@@ -1,14 +1,17 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react';
 import {fetchData} from "../../utils/helpers.js";
-import { developmentSevers } from "../../services/api.js";
+import { servers } from "../../services/api.js";
 import ProductCard01 from "../../components/Product/Cards/ProductCard01.jsx";
 import { MdArrowForward } from 'react-icons/md';
 import {usePopup} from "../../context/PopupContext.jsx";
 import {IoIosArrowForward} from "react-icons/io";
+import {useInput} from "../../context/InputContext.jsx";
+import SearchComponent from "../../components/SearchingSorting/SearchComponent.jsx";
 
 // eslint-disable-next-line react/prop-types,no-unused-vars
 const ProductGrid = ({topRated}) => {
+    const { inputValue } = useInput();
     const { showPopup } = usePopup();
     const [visibleRows, setVisibleRows] = useState(2);
     const handleSeeMoreRows = () => {
@@ -25,7 +28,7 @@ const ProductGrid = ({topRated}) => {
         async function main() {
             try {
                 setLoader(true);
-                const result = await fetchData(`${developmentSevers.activities}/api/products`, token);
+                const result = await fetchData(`${servers.activities}/api/products`, token);
                 if (result.error) {
                     showPopup(result.error,"#00ff00","#fff");
                 } else {
@@ -81,6 +84,7 @@ const ProductGrid = ({topRated}) => {
                     <a href={topRated?"/topRated":"/products"}>{topRated?`Top Rated Product in Each category`:`Products`}</a>
                 </div>
             </div>
+            {inputValue&&<SearchComponent  searchKeyword={inputValue}/>}
             {categoryKeys.slice(0, visibleRows).map((category, index) => (
                 <div key={index} className="container mx-auto my-4 px-2">
                     <h2 className="text-2xl font-bold mb-4">{category}</h2>

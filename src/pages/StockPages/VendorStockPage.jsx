@@ -1,14 +1,17 @@
-import  { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { IoIosArrowForward } from 'react-icons/io';
 import { GridLoader } from 'react-spinners';
 import ShopProfile from './ShopProfile.jsx';
 import {capitalizeLastThreeLetters, fetchData} from '../../utils/helpers.js';
-import { developmentSevers } from '../../services/api.js';
+import { servers } from '../../services/api.js';
 import {shop} from "../../assets/data/shop.js";
 import {usePopup} from "../../context/PopupContext.jsx";
+import {useInput} from "../../context/InputContext.jsx";
+import SearchComponent from "../../components/SearchingSorting/SearchComponent.jsx";
 
 function VendorStockPage() {
+    const { inputValue } = useInput();
     const { vendorID } = useParams();
     const { showPopup } = usePopup();
     const token = localStorage.getItem('byose_client_token');
@@ -20,7 +23,7 @@ function VendorStockPage() {
         async function main() {
             try {
                 setLoader(true);
-                const result = await fetchData(`${developmentSevers.activities}/api/vendors/${vendorID}`, token);
+                const result = await fetchData(`${servers.activities}/api/vendors/${vendorID}`, token);
                 if (result.error) {
                     showPopup(result.error,"#00ff00","#fff");
                 } else {
@@ -45,6 +48,7 @@ function VendorStockPage() {
                 <IoIosArrowForward />
                 <a href={`/shops/${vendorID}`}>...{capitalizeLastThreeLetters(vendorID)}</a>
             </div>
+            {inputValue&&<SearchComponent  searchKeyword={inputValue}/>}
             <div className="flex justify-center items-center min-h-[50vh] my-auto">
                 {loader ? (
                     <GridLoader color="#166534" />

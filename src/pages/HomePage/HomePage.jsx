@@ -1,3 +1,5 @@
+// eslint-disable-next-line no-unused-vars
+import React, { useEffect, useState } from 'react';
 import HomeDiscount01 from '../../components/Discount/HomeDiscounto1';
 import Categories from '../../components/Product/Categories';
 import NewProducts from '../../components/Product/NewProducts.jsx';
@@ -6,13 +8,13 @@ import TopBoughtProduct from '../../components/Product/TopBoughtProduct';
 import StoreOffers from '../../components/Product/StoreOffers.jsx';
 import OtherProducts from '../../components/Product/OtherProducts';
 import Companies from '../../components/Product/Companies';
-import React, { useEffect, useState } from 'react';
 import { fetchData } from '../../utils/helpers';
-import { developmentSevers } from '../../services/api';
+import { servers } from '../../services/api';
 import { FadeLoader } from "react-spinners";
 import {useInput} from "../../context/InputContext.jsx";
 import {usePopup} from "../../context/PopupContext.jsx";
 import {IoIosArrowForward} from "react-icons/io";
+import SearchComponent from "../../components/SearchingSorting/SearchComponent.jsx";
 
 export default function HomePage() {
     const token = localStorage.getItem('byose_client_token');
@@ -33,7 +35,7 @@ export default function HomePage() {
         async function main() {
             try {
                 setLoader(true);
-                const result = await fetchData(`${developmentSevers.activities}/api/dashboard/home`, token);
+                const result = await fetchData(`${servers.activities}/api/dashboard/home`, token);
                 if (result.error) {
                     showPopup(result.error,"#00ff00","#fff");
                 } else {
@@ -73,6 +75,7 @@ export default function HomePage() {
                     <a href={`/`}>Home</a>
                     <IoIosArrowForward/>
                 </div>
+                {inputValue&&<SearchComponent  searchKeyword={inputValue}/>}
                 {discount && <HomeDiscount01 dicount={discount}/>}
                 <Categories/>
                 <NewProducts inventories={topSixLatest}/>

@@ -2,14 +2,17 @@
 import React, { useEffect, useState } from 'react';
 import ProductCard01 from "../../components/Product/Cards/ProductCard01.jsx";
 import {capitalizeLastThreeLetters, fetchData, shuffleArray} from "../../utils/helpers.js";
-import { developmentSevers } from "../../services/api.js";
+import { servers } from "../../services/api.js";
 import { FadeLoader } from "react-spinners";
 import { useParams } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
 import { MdError, MdVerified } from "react-icons/md";
 import {usePopup} from "../../context/PopupContext.jsx";
+import {useInput} from "../../context/InputContext.jsx";
+import SearchComponent from "../../components/SearchingSorting/SearchComponent.jsx";
 
 function StoreProducts() {
+    const { inputValue } = useInput();
     const { vendorID } = useParams();
     const { showPopup } = usePopup();
     const token = localStorage.getItem('byose_client_token');
@@ -21,7 +24,7 @@ function StoreProducts() {
         async function main() {
             try {
                 setLoader(true);
-                const result = await fetchData(`${developmentSevers.activities}/api/store/vendor/${vendorID}`, token);
+                const result = await fetchData(`${servers.activities}/api/store/vendor/${vendorID}`, token);
                 if (result.error) {
                     showPopup(result.error,"#00ff00","#fff");
                 } else {
@@ -47,6 +50,7 @@ function StoreProducts() {
                     <IoIosArrowForward />
                     <a href={`/stores/${vendorID}`}>{capitalizeLastThreeLetters(vendorID)}</a>
                 </div>
+                {inputValue&&<SearchComponent  searchKeyword={inputValue}/>}
                 <h1 className="text-4xl font-bold text-gray-800 mb-4 flex gap-3 container mx-auto">
                     {vendor.storeName}
                     {vendor.isVerified ? (

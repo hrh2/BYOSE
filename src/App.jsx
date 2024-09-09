@@ -52,8 +52,8 @@ function App() {
               <Route exact path='/cart' element={<CartPage/>}/>
               {/*Stock Management*/}
               <Route exact path='/shops' element={<StockPage/>}/>
-              <Route exact path='/stores/:vendorID' element={<StoreProducts/>}/>
               <Route exact path='/shops/:vendorID' element={<VendorStockPage/>}/>
+              <Route exact path='/stores/:vendorID' element={<StoreProducts/>}/>
               {/* Contact us */}
               <Route exact path='/contacts' element={<ContactusPage/>}/>
               <Route exact path='/accessibility' element={<Accessibility/>}/>

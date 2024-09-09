@@ -1,7 +1,11 @@
 import { FiFacebook, FiTwitter, FiInstagram, FiLinkedin } from 'react-icons/fi';
 import 'tailwindcss/tailwind.css';
+import {useInput} from "../../context/InputContext.jsx";
+import SearchComponent from "../../components/SearchingSorting/SearchComponent.jsx";
+import React from "react";
 
 export default function  BlogPage () {
+  const { inputValue } = useInput();
   const posts = [
     {
       title: 'How grocers are approaching delivery as the market evolves',
@@ -27,7 +31,8 @@ export default function  BlogPage () {
   ];
 
   return (
-    <div className="container mx-auto p-6">
+    <div className="container mx-auto flex flex-col p-6">
+      {inputValue&&<SearchComponent  searchKeyword={inputValue}/>}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="md:col-span-2">
           {posts.map((post, index) => (

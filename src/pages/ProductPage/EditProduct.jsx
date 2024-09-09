@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import { FaPlus } from "react-icons/fa6";
 import { LuLayoutDashboard } from "react-icons/lu";
 import { IoIosArrowForward } from "react-icons/io";
-import { developmentSevers } from "../../services/api.js";
+import { servers } from "../../services/api.js";
 import {fetchData,updateData} from "../../utils/helpers.js";
 import { productCategories } from "../../assets/data/productCategories.js";
 import { productUnits } from "../../assets/data/ProductUnits.js";
@@ -39,7 +39,7 @@ function EditProduct() {
         async function main() {
             try {
                 setLoader(true);
-                const result = await fetchData(`${developmentSevers.activities}/api/products/${productID}`, token);
+                const result = await fetchData(`${servers.activities}/api/products/${productID}`, token);
                 if (result.message) {
                     showPopup(result.message,"#00ff00","#fff");
                 } else {
@@ -81,7 +81,7 @@ function EditProduct() {
         try {
             setLoader(true);
             data.images = imageArray;
-            const result = await updateData(`${developmentSevers.activities}/api/products/update/${productID}`, data, token);
+            const result = await updateData(`${servers.activities}/api/products/update/${productID}`, data, token);
             if (result.error) {
                 showPopup(result.error,"#00ff00","#fff");
             } else {

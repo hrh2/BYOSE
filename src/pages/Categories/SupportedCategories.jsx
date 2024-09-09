@@ -1,5 +1,7 @@
 import React from 'react';
 import {IoIosArrowForward} from "react-icons/io";
+import {useInput} from "../../context/InputContext.jsx";
+import SearchComponent from "../../components/SearchingSorting/SearchComponent.jsx";
 
 // Combined object for category details
 const categoryDetails = {
@@ -76,6 +78,7 @@ const categoryDetails = {
 // eslint-disable-next-line react/prop-types
 const CategoryCard = ({ category, details }) => (
     // eslint-disable-next-line react/prop-types
+
     <a href={`/categories/${category}`} className="border p-4 rounded shadow-md">
         {/* eslint-disable-next-line react/prop-types */}
         <img src={details.image} alt={category} className="w-full h-32 object-cover rounded" />
@@ -85,13 +88,17 @@ const CategoryCard = ({ category, details }) => (
     </a>
 );
 
-const SupportedCategories = () => (
-    <div className="container mx-auto p-4">
+const SupportedCategories = () =>{
+    const { inputValue } = useInput();
+    return (
+
+    <div className="container flex flex-col gap-2 mx-auto p-4">
         <div className=" flex flex-row gap-2 py-4 px-3 container mx-auto">
             <a href={`/`}>Home</a>
             <IoIosArrowForward/>
             <a href={`/categories`}>All Categories</a>
         </div>
+        {inputValue&&<SearchComponent  searchKeyword={inputValue}/>}
         <h1 className="text-3xl font-bold text-center mb-8">Know More About Supported Categories</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {Object.entries(categoryDetails).map(([category, details]) => (
@@ -99,6 +106,6 @@ const SupportedCategories = () => (
             ))}
         </div>
     </div>
-);
+)};
 
 export default SupportedCategories;

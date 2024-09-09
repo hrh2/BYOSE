@@ -1,13 +1,11 @@
-export const developmentSevers ={
-    activities:"http://localhost:2500",
-    authenticated:"http://localhost:2500",
-    image:"http://localhost:2500",
-    upload:"http://localhost:2500"
-}
+const default_api = import.meta.env.VITE_DEFAULT_API
+const auth_api = import.meta.env.VITE_AUTH_API;
+const image_api = import.meta.env.VITE_IMAGE_API;
+const upload_api = import.meta.env.VITE_UPLOAD_API;
 
-export const productionSevers ={
-    activities:"http://localhost:2500",
-    authenticated:"https://cryptavita-ai-backend.onrender.com",
-    image:"https://cryptavita-ai-backend.onrender.com",
-    upload:"https://cryptavita-ai-backend.onrender.com"
+export const servers ={
+    activities:default_api,
+    authenticated:auth_api,
+    image:image_api,
+    upload:upload_api
 }

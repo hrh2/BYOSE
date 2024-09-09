@@ -4,6 +4,7 @@ import { FaRegHeart } from 'react-icons/fa';
 import { FaOpencart } from 'react-icons/fa6';
 import { SlLocationPin } from 'react-icons/sl';
 import {useEffect} from "react";
+// eslint-disable-next-line no-unused-vars
 import LanguageSelectionDropDown from "../DropDown/LanguageSelectionDropDown.jsx";
 import CurrencySelectionDropDown from "../DropDown/CurrencySelectionDropDown.jsx";
 import StockSelectionDropDown from "../DropDown/StockSelectionDropDown.jsx";
@@ -30,8 +31,8 @@ export default function HomePageHeader01({className}) {
             </span>
           </div>
           <div className="flex flex-col md:flex-row gap-2 justify-center md:justify-start">
-            <LanguageSelectionDropDown items={['English', 'French', 'KINY']} search="Language" />
-            <CurrencySelectionDropDown items={['USD', 'FRW', 'EUR']} search="Currency" />
+            {/*<LanguageSelectionDropDown items={['English', 'French', 'KINY']} search="Language" />*/}
+            <CurrencySelectionDropDown items={['RWF','USD', 'EUR', 'JPY', 'GBP', 'AUD', 'CAD', 'CHF', 'CNY', 'HKD', 'NZD']} search="Currency" />
             <a href="/trakProducts" className="flex justify-center md:justify-start pt-3">Product Tracking</a>
           </div>
         </div>
@@ -40,7 +41,7 @@ export default function HomePageHeader01({className}) {
       {/* Main content */}
       <div className={`md:flex md:flex-row flex-col justify-center gap-4 md:w-[70%] w-[95%] mx-auto pt-2 flex`}>
         <div className="flex justify-center md:justify-start">
-          <a href={`accessibility`} className="flex flex-row cursor-pointer active:cursor-wait">
+          <a href={`/accessibility`} className="flex flex-row cursor-pointer active:cursor-wait">
             <SlLocationPin size={32} className="text-[#030712]" />
             <span className="flex flex-col justify-center align-middle">
               <span className="text-[13px] font-normal text-center">Accessible to</span>
@@ -78,8 +79,7 @@ export default function HomePageHeader01({className}) {
         <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
           <ProductCategoriesDropDown items={['Categories']} stylee="text-[18px] font-semibold text-[#030712]"
                                      search="Search Page.."/>
-          <StockSelectionDropDown items={[{id:111,name:'shops'}]}
-                                  stylee="text-[18px] font-semibold text-[#030712]" search="Search Page.."/>
+          <StockSelectionDropDown items={[{id:111,name:'shops'}]} className="text-[18px] font-semibold text-[#030712]" search="Search Page.."/>
           {/* <a href="/#" className="flex gap-2 p-2 text-[18px] font-semibold text-[#030712] justify-center md:justify-start">My account</a> */}
           {/* <a href="/#" className="flex gap-2 p-2 text-[18px] font-semibold text-[#030712] justify-center md:justify-start">Wishlist</a> */}
         </div>

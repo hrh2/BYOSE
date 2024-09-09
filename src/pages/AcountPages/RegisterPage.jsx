@@ -1,13 +1,16 @@
-import {useState} from "react";
+import React, {useState} from "react";
 import Axios from "axios";
-import {developmentSevers} from "../../services/api.js";
+import {servers} from "../../services/api.js";
 import Dropzone from "react-dropzone";
 import {FaPlus} from "react-icons/fa6";
 import {FaCloudUploadAlt} from "react-icons/fa";
 import {usePopup} from "../../context/PopupContext.jsx";
+import {useInput} from "../../context/InputContext.jsx";
+import SearchComponent from "../../components/SearchingSorting/SearchComponent.jsx";
 
 
-export default function RegisterPage() {
+export default function  RegisterPage() {
+	const { inputValue } = useInput();
 	const { showPopup } = usePopup();
 	const [loader, setLoader] = useState(false);
 	const [image,setImage]=useState(null)
@@ -33,7 +36,7 @@ export default function RegisterPage() {
 		setLoader(true);
 		try {
 			data.userProfile = image;
-			const response = await Axios.post(`${developmentSevers.activities}/api/register`, data);
+			const response = await Axios.post(`${servers.activities}/api/register`, data);
 			const token = response.data.token;
 			showPopup(response.data.message, "#00ff00", "#fff");
 			localStorage.setItem('byose_client_token', token);
@@ -67,7 +70,8 @@ export default function RegisterPage() {
 		}
 	};
   return (
-<div className="py-8 flex items-center justify-center w-full dark:bg-gray-950">
+<div className="py-8 flex flex-col items-center justify-center w-full dark:bg-gray-950">
+	{inputValue&&<SearchComponent  searchKeyword={inputValue}/>}
 	<div className="bg-white dark:bg-gray-900 rounded-lg px-8 py-6 md:w-[40%] sm:w-[60%] w-[90%]">
 	<h1 className="text-2xl font-bold text-center mb-4 dark:text-gray-200 flex gap-5 justify-center"><a href={`/login`} className="text-[#9CA3AF] cursor-pointer">Login</a> Register</h1>
 	<p className="text-center py-4">There are many advantages to creating an account: the payment process is

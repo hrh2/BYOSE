@@ -3,8 +3,12 @@ import { Badge, Sidebar } from "flowbite-react";
 import { HiArrowSmRight, HiChartPie, HiInbox, HiShoppingBag, HiTable, HiUser, HiViewBoards } from "react-icons/hi";
 import { TbHexagonLetterB } from "react-icons/tb";
 import { SiHomebridge } from "react-icons/si";
-import { MdTipsAndUpdates } from "react-icons/md";
 import { FiLogOut } from "react-icons/fi";
+import StockSelectionDropDown from "../DropDown/StockSelectionDropDown.jsx";
+import CurrencySelectionDropDown from "../DropDown/CurrencySelectionDropDown.jsx";
+import {FcMoneyTransfer} from "react-icons/fc";
+import ProductCategoriesDropDown from "../DropDown/ProductCategoriesDropDown.jsx";
+import {MdOutlineCategory} from "react-icons/md";
 
 // eslint-disable-next-line react/prop-types
 export default function HomeSidebar({ isOpen, toggleSidebar }) {
@@ -23,13 +27,14 @@ export default function HomeSidebar({ isOpen, toggleSidebar }) {
           <Sidebar.Item href="#" className=" justify-start align-middle"  icon={SiHomebridge}>
             Home
           </Sidebar.Item>
-          <Sidebar.Collapse className=" justify-between" icon={HiShoppingBag} label="Shops">
-            <Sidebar.Item className=" justify-start align-middle" href="#">Organic</Sidebar.Item>
-            <Sidebar.Item className=" justify-start align-middle" href="#">Cold sale</Sidebar.Item>
-            <Sidebar.Item className=" justify-start align-middle" href="#">Top</Sidebar.Item>
-          </Sidebar.Collapse>
-          <Sidebar.Item href="#" className=" justify-start align-middle" icon={MdTipsAndUpdates}>
-            Trends
+          <Sidebar.Item href="#" className=" justify-start align-middle" icon={FcMoneyTransfer}>
+            <CurrencySelectionDropDown items={['RWF','USD', 'EUR', 'JPY', 'GBP', 'AUD', 'CAD', 'CHF', 'CNY', 'HKD', 'NZD']} search="Currency" />
+          </Sidebar.Item>
+          <Sidebar.Item href="#" className=" justify-start align-middle" icon={HiShoppingBag}>
+            <StockSelectionDropDown items={[{id:111,name:'shops'}]} className="text-[18px] font-semibold text-[#030712]" search="Search Page.."/>
+          </Sidebar.Item>
+          <Sidebar.Item href="#" className=" justify-start align-middle" icon={MdOutlineCategory}>
+            <ProductCategoriesDropDown items={['Categories']} stylee="text-[18px] font-semibold text-[#030712]" search="Search Page.."/>
           </Sidebar.Item>
           {!token&&
           <Sidebar.Item href="/login" className=" justify-start align-middle" icon={HiArrowSmRight}>

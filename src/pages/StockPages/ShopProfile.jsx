@@ -55,6 +55,7 @@ const ShopProfile = ({ shop,vendor,inventories ,addresses}) => {
                 <h2 className="text-gray-800 mb-4 flex justify-between gap-4 items-center">
                     {/* eslint-disable-next-line react/prop-types */}
                     <span className={`flex flex-row text-2xl font-semibold`}>
+                        {/* eslint-disable-next-line react/prop-types */}
                         <FaBoxOpen className="mr-2" /> Products <span className={`text-white bg-black rounded-xl  px-4`}>{inventories.length}</span>
                     </span>
                     <span>
@@ -66,7 +67,7 @@ const ShopProfile = ({ shop,vendor,inventories ,addresses}) => {
                     <div className="grid md:grid-cols-3 gap-3">
                         {/* eslint-disable-next-line react/prop-types */}
                     {shuffleArray(inventories).slice(0,6).map((inventory, index) => (
-                            <ProductCard01 key={index} inventory={inventory} s={"border-[3px] rounded-md md:p-5 md:w-full sm:w-[90%] w-[100%] p-4"} badge={"org"}/>
+                            <ProductCard01 key={index} inventory={inventory} s={"border-[3px] rounded-md md:p-5 md:w-full sm:w-[90%] w-[100%] p-4"}/>
                     ))}
                     </div>
                 </div>
