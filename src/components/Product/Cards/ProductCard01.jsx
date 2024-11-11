@@ -1,10 +1,10 @@
 import { FaRegHeart } from "react-icons/fa6";
 // import { FaPlusCircle } from "react-icons/fa";
 import img from '../../../assets/images/organic.png'
-import Organic from "../../Badge/Organic";
 import Star from "../../Badge/Star";
 import Discount from "../../Badge/Discount";
 import AddToCart from "../../Buttons/AddToCart";
+// eslint-disable-next-line no-unused-vars
 import Timer from "../../Badge/Timer";
 import ColdSale from "../../Badge/ColdSale";
 // eslint-disable-next-line react/prop-types
@@ -23,8 +23,6 @@ export default function ProductCard01({s,badge,inventory}) {
                 {/* Badge */}
                 <div className={`py-2`}>
                     {/* eslint-disable-next-line react/prop-types */}
-                    {badge==="org" && <Organic text = {inventory?inventory.product.category:'...'}/>}
-                    {/* eslint-disable-next-line react/prop-types */}
                     {badge==="cold" && <ColdSale text = {inventory?inventory.product.category:'...'}/>}
                 </div>
             </div>
@@ -38,15 +36,21 @@ export default function ProductCard01({s,badge,inventory}) {
                 <div>
                     {/* eslint-disable-next-line react/prop-types */}
                     <Discount current={inventory?inventory.product.sellingPrice:0} old={inventory?inventory.product.sellingPrice+12:0} className={"text-lg py-3"}/>
-                    <AddToCart text={true}/>
                 </div>
-                {/* eslint-disable-next-line react/prop-types */}
-                <a href={`/products/${inventory.product._id}`} className={` font-semibold flex justify-end active:scale-110 active:text-gray-300 visited:text-gray-300`}>see more</a>
             </div>
         </div>
-        <div>
-            {false&&<Timer/>}
-        </div>
-    </div>
-  )
+          <div>
+              <div className={`flex justify-end px-2`}>
+                  {/* eslint-disable-next-line react/prop-types */}
+                  <AddToCart text={true}/>
+              </div>
+              <div className={`flex justify-end`}>
+                  {/* eslint-disable-next-line react/prop-types */}
+                  <a href={`/products/${inventory.product._id}`}
+                     className={` font-semibold flex justify-end active:scale-110 active:text-gray-300 visited:text-gray-300`}>see
+                      more</a>
+              </div>
+          </div>
+      </div>
+    )
 }

@@ -131,32 +131,32 @@ function NewProduct() {
                 <IoIosArrowForward />
                 <a href="/dashboard/new-product">New Product</a>
             </div>
-            <div className={`container mx-auto flex justify-between bg-white p-4`}>
-                <h2 className={`text-black font-bold text-xl`}>New Product Item</h2>
+            <div className={`container mx-auto flex justify-between bg-white dark:bg-black p-4`}>
+                <h2 className={`text-black dark:text-white font-bold text-xl`}>New Product Item</h2>
                     {!loader&&
                     <div className={`flex  gap-3`}>
-                            <button type={`button`} onClick={(event) => handleOnSubmit(event, false)} className={` bg-[#166534]  pt-2 px-2 text-white font-bold rounded-md hover:bg-green-600`}>Save</button>
-                            <button type={`button`} onClick={(event) => handleOnSubmit(event, true)} className={`bg-[#166534] pt-2 px-2 text-white font-bold rounded-md hover:bg-green-600`}>Save and Publish</button>
+                            <button type={`button`} onClick={(event) => handleOnSubmit(event, false)} className={` bg-[#166534]  #pt-2 px-2 text-white font-bold rounded-md hover:bg-green-600`}>Save</button>
+                            <button type={`button`} onClick={(event) => handleOnSubmit(event, true)} className={`bg-[#166534] #pt-2 px-2 text-white font-bold rounded-md hover:bg-green-600`}>Save and Publish</button>
                     </div>
                     }
             </div>
             {loader&&<div className={`flex align-middle justify-center items-center py-2`}>
                 <PropagateLoader color={`#166534`}/>
             </div>}
-            <div className={`container mx-auto grid md:grid-cols-9 grid-cols-1 gap-4 px-4 pt-3 bg-white`}>
+            <div className={`container mx-auto grid md:grid-cols-9 grid-cols-1 gap-4 px-4 pt-3 bg-white dark:bg-black`}>
                 <div className={` col-span-6 grid md:grid-cols-2 gap-4 grid-cols-1`}>
                     <div className={`flex flex-col gap-4`}>
                         <div className="w-full">
                             <label htmlFor="name"
                                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Product Name</label>
                             <input type="text" id="name" name={`name`} value={data.name} onChange={handleOnChange}
-                                   className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500  bg-[#D9D9D950]"
+                                   className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500  bg-[#D9D9D950]  dark:bg-[#262626af]"
                                    placeholder="Product name" required/>
                         </div>
                         <div className="w-full">
                             <label htmlFor="category" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Product Category</label>
                             <select id="category" name="category" value={data.category} onChange={handleOnChange}
-                                    className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500  bg-[#D9D9D950]" required={true}>
+                                    className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500  bg-[#D9D9D950]  dark:bg-[#262626af]" required={true}>
                                 {productCategories.map(category => (
                                     <option key={category.id} value={category.name}>{category.name}</option>
                                 ))}
@@ -169,7 +169,7 @@ function NewProduct() {
                                     Price</label>
                                 <input type="number" id="sellingPrice" name={`sellingPrice`} value={data.sellingPrice}
                                        onChange={handleOnChange}
-                                       className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500  bg-[#D9D9D950]"
+                                       className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500  bg-[#D9D9D950]  dark:bg-[#262626af]"
                                        placeholder="Selling Price" required/>
                             </div>
                             <div className="w-full">
@@ -178,7 +178,7 @@ function NewProduct() {
                                     Price</label>
                                 <input type="number" id="costPrice" name={`costPrice`} value={data.costPrice}
                                        onChange={handleOnChange}
-                                       className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500  bg-[#D9D9D950]"
+                                       className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500  bg-[#D9D9D950] dark:bg-[#262626af]"
                                        placeholder="Cost Product" required/>
                             </div>
                         </div>
@@ -189,7 +189,7 @@ function NewProduct() {
                                     in Stock</label>
                                 <input type="number" id="quantity" name={`quantity`} value={data.quantity}
                                        onChange={handleOnChange}
-                                       className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500  bg-[#D9D9D950]"
+                                       className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500  bg-[#D9D9D950] dark:bg-[#262626af]"
                                        placeholder="Quantity in Stock" required/>
                             </div>
                             <div className="w-full">
@@ -198,7 +198,7 @@ function NewProduct() {
                                     of Quantity</label>
                                 <select id={`quantityType`} name="quantityType" value={data.quantityType}
                                         onChange={handleOnChange}
-                                        className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500  bg-[#D9D9D950]" required={true}>
+                                        className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500  bg-[#D9D9D950] dark:bg-[#262626af]" required={true}>
                                     {productUnits.map(unit => (
                                         <option key={unit.id}  value={unit.unitName}>{unit.unitName},({unit.unitAcronym})</option>
                                     ))}
@@ -210,7 +210,7 @@ function NewProduct() {
                                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Type of
                                 Order</label>
                             <select id="orderType" name="orderType" value={data.orderType} onChange={handleOnChange}
-                                    className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500  bg-[#D9D9D950]" required={true}>
+                                    className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500  bg-[#D9D9D950] dark:bg-[#262626af]" required={true}>
                                 {supportedOrders.map(order => (
                                     <option key={order.id} value={order.name}>{order.name}</option>
                                 ))}
@@ -218,14 +218,14 @@ function NewProduct() {
                         </div>
                     </div>
                     <div className={`flex flex-col gap-4`}>
-                        <div className={`container mx-auto bg-white p-4 grid grid-cols-1 gap-4`}>
+                        <div className={`container mx-auto  p-4 grid grid-cols-1 gap-4`}>
                             <div className="w-full">
                                 <label htmlFor="productDescription"
                                        className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Product Description</label>
                                 <textarea id={`productDescription`}
                                           rows={6}
                                           name="description" value={data.description} onChange={handleOnChange}
-                                          className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500  bg-[#D9D9D950]"
+                                          className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500  bg-[#D9D9D950] dark:bg-[#262626af]"
                                           placeholder="Provide the product description and details"></textarea>
                             </div>
                         </div>

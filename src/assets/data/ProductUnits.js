@@ -40,6 +40,27 @@ export  const productUnits = [
         unitDescription: "A collection of items grouped together",
         unitAcronym: "bundle",
         unitUsageExample: "A bundle of stationery"
+    },
+    {
+        id: 7,
+        unitName: "Pair",
+        unitDescription: "A pair of items grouped together",
+        unitAcronym: "pair",
+        unitUsageExample: "A pair of shoes"
+    },
+    {
+        id: 8,
+        unitName: "Set",
+        unitDescription: "A set of items grouped together",
+        unitAcronym: "set",
+        unitUsageExample: "A set of chairs"
+    },
+    {
+        id: 9,
+        unitName: "Jar",
+        unitDescription: "A set of items grouped together",
+        unitAcronym: "Jar",
+        unitUsageExample: "A Jar of Oil"
     }
 ];
 

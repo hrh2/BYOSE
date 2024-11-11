@@ -10,11 +10,9 @@ export const getExchangeRates = async () => {
         const response = await axios.get(BASE_URL);
         if (response.data.result === 'success') {
             return response.data.conversion_rates;
-        } else {
-            throw new Error('Failed to fetch exchange rates');
         }
-    } catch (error) {
-        console.error('Error fetching exchange rates', error);
+    }catch(error) {
+        console.log(error.message);
         return null;
     }
 };
