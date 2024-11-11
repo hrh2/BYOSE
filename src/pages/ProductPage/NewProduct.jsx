@@ -3,7 +3,7 @@ import { useState } from "react";
 import { FaPlus } from "react-icons/fa6";
 import { LuLayoutDashboard } from "react-icons/lu";
 import { IoIosArrowForward } from "react-icons/io";
-import { servers } from "../../services/api.js";
+import { servers } from "../../servicesapi.js";
 import { sendData } from "../../utils/helpers.js";
 import { productCategories } from "../../assets/data/productCategories.js";
 import { productUnits } from "../../assets/data/ProductUnits.js";
@@ -59,7 +59,7 @@ function NewProduct() {
             setLoader(true);
             data.images = imageArray;
             data.isPublished = isPublish;
-            const result = await sendData(`${servers.activities}/api/products`, data, token);
+            const result = await sendData(`${servers.activities}api/products`, data, token);
             if (result.error) {
                 showPopup(result.error,"#00ff00","#fff");
             } else {

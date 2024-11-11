@@ -1,7 +1,7 @@
 import 'tailwindcss/tailwind.css';
 import React, {useEffect, useState} from "react";
 import {fetchData} from "../../utils/helpers.js";
-import {servers} from "../../services/api.js";
+import {servers} from "../../servicesapi.js";
 import VendorView from "./VendorView.jsx";
 import CustomerView from "./CustomerView.jsx";
 import {usePopup} from "../../context/PopupContext.jsx";
@@ -20,7 +20,7 @@ export default function AccountUpdate() {
     async function main() {
       try {
         setLoader(true)
-        const result = await fetchData(`${servers.activities}/api/account`, token);
+        const result = await fetchData(`${servers.activities}api/account`, token);
         if (result.error) {
           showPopup(result.error,"#00ff00","#fff");
         } else {

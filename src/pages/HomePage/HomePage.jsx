@@ -9,7 +9,7 @@ import StoreOffers from '../../components/Product/StoreOffers.jsx';
 import OtherProducts from '../../components/Product/OtherProducts';
 import Companies from '../../components/Product/Companies';
 import { fetchData } from '../../utils/helpers';
-import { servers } from '../../services/api';
+import { servers } from '../../servicesapi';
 import { FadeLoader } from "react-spinners";
 import {useInput} from "../../context/InputContext.jsx";
 import {usePopup} from "../../context/PopupContext.jsx";
@@ -35,7 +35,7 @@ export default function HomePage() {
         async function main() {
             try {
                 setLoader(true);
-                const result = await fetchData(`${servers.activities}/api/dashboard/home`, token);
+                const result = await fetchData(`${servers.activities}api/dashboard/home`, token);
                 if (result.error) {
                     showPopup(result.error,"#00ff00","#fff");
                 } else {

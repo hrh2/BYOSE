@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import Axios from "axios";
-import {servers} from "../../services/api.js";
+import {servers} from "../../servicesapi.js";
 import Dropzone from "react-dropzone";
 import {FaPlus} from "react-icons/fa6";
 import {FaCloudUploadAlt} from "react-icons/fa";
@@ -36,7 +36,7 @@ export default function  RegisterPage() {
 		setLoader(true);
 		try {
 			data.userProfile = image;
-			const response = await Axios.post(`${servers.activities}/api/register`, data);
+			const response = await Axios.post(`${servers.activities}api/register`, data);
 			const token = response.data.token;
 			showPopup(response.data.message, "#00ff00", "#fff");
 			localStorage.setItem('byose_client_token', token);

@@ -6,7 +6,7 @@ import Shop01 from "../Product/Cards/Shop01.jsx";
 import ProductCard01 from "../Product/Cards/ProductCard01.jsx";
 import links from "../../assets/data/Links.js";
 import LinkComponent from "../Badge/LinkComponent.jsx";
-import {servers} from "../../services/api.js";
+import {servers} from "../../servicesapi.js";
 // eslint-disable-next-line react/prop-types
 export  default   function  SearchComponent ({ searchKeyword, vendors, inventories }){
     const [fetchedVendors, setFetchedVendors] = useState([]);
@@ -22,7 +22,7 @@ export  default   function  SearchComponent ({ searchKeyword, vendors, inventori
     const fetchResults = async () => {
         setLoading(true);
         try {
-            const response = await axios.get(`${servers.activities}/api/dashboard/search?q=${searchKeyword}`);
+            const response = await axios.get(`${servers.activities}api/dashboard/search?q=${searchKeyword}`);
             setFetchedVendors(response.data.vendors);
             // console.log(response.data.vendors);
             setFetchedInventories(response.data.inventories);

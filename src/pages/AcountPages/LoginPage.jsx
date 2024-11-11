@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import Axios from 'axios'
-import {servers} from "../../services/api.js";
+import {servers} from "../../servicesapi.js";
 import {usePopup} from "../../context/PopupContext.jsx";
 import {useInput} from "../../context/InputContext.jsx";
 import SearchComponent from "../../components/SearchingSorting/SearchComponent.jsx";
@@ -22,7 +22,7 @@ export default function LoginPage() {
         event.preventDefault();
         setLoader(true);
         try {
-            const response = await Axios.post(`${servers.activities}/api/login`, data);
+            const response = await Axios.post(`${servers.activities}api/login`, data);
             const token = response.data.token;
             showPopup(response.data.message,"#00ff00","#fff");
             localStorage.setItem('byose_client_token', token);

@@ -1,7 +1,7 @@
 import Shop01 from "../../components/Product/Cards/Shop01.jsx";
 import React, { useEffect, useState } from "react";
 import { fetchData } from "../../utils/helpers.js";
-import { servers } from "../../services/api.js";
+import { servers } from "../../servicesapi.js";
 import {IoIosArrowForward} from "react-icons/io";
 import {usePopup} from "../../context/PopupContext.jsx";
 import {useInput} from "../../context/InputContext.jsx";
@@ -19,7 +19,7 @@ function StockPage() {
         async function main() {
             try {
                 setLoader(true);
-                const result = await fetchData(`${servers.activities}/api/vendors`, token);
+                const result = await fetchData(`${servers.activities}api/vendors`, token);
                 if (result.error) {
                     showPopup(result.error,"#00ff00","#fff");
                 } else {

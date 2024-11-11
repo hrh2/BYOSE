@@ -10,7 +10,7 @@ import {LuLayoutDashboard} from "react-icons/lu";
 import ProductCard03 from "../../components/Product/Cards/ProductCard03.jsx";
 import {useEffect, useState} from "react";
 import {fetchData} from "../../utils/helpers.js";
-import {servers} from "../../services/api.js";
+import {servers} from "../../servicesapi.js";
 import {FadeLoader} from "react-spinners";
 import {usePopup} from "../../context/PopupContext.jsx";
 
@@ -24,7 +24,7 @@ function Dashboard() {
         async function main() {
             try {
                 setLoader(true);
-                const result = await fetchData(`${servers.activities}/api/dashboard/vendor`, token);
+                const result = await fetchData(`${servers.activities}api/dashboard/vendor`, token);
                 if (result.error) {
                     showPopup(result.error,"#00ff00","#fff");
                 } else {

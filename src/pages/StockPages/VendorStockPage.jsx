@@ -4,7 +4,7 @@ import { IoIosArrowForward } from 'react-icons/io';
 import { GridLoader } from 'react-spinners';
 import ShopProfile from './ShopProfile.jsx';
 import {capitalizeLastThreeLetters, fetchData} from '../../utils/helpers.js';
-import { servers } from '../../services/api.js';
+import { servers } from '../../servicesapi.js';
 import {shop} from "../../assets/data/shop.js";
 import {usePopup} from "../../context/PopupContext.jsx";
 import {useInput} from "../../context/InputContext.jsx";
@@ -23,7 +23,7 @@ function VendorStockPage() {
         async function main() {
             try {
                 setLoader(true);
-                const result = await fetchData(`${servers.activities}/api/vendors/${vendorID}`, token);
+                const result = await fetchData(`${servers.activities}api/vendors/${vendorID}`, token);
                 if (result.error) {
                     showPopup(result.error,"#00ff00","#fff");
                 } else {

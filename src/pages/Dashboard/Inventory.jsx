@@ -5,7 +5,7 @@ import { LuLayoutDashboard } from "react-icons/lu";
 import { IoIosArrowForward } from "react-icons/io";
 import { useEffect, useState } from "react";
 import {fetchData, updateData} from "../../utils/helpers.js";
-import { servers } from "../../services/api.js";
+import { servers } from "../../servicesapi.js";
 import { Button } from "flowbite-react";
 import {FadeLoader} from "react-spinners";
 import {FaEdit} from "react-icons/fa";
@@ -22,7 +22,7 @@ function Inventory() {
         async function main() {
             try {
                 setLoader(true);
-                const result = await fetchData(`${servers.activities}/api/inventories`, token);
+                const result = await fetchData(`${servers.activities}api/inventories`, token);
                 if (result.error) {
                     showPopup(result.error,"#00ff00","#fff");
                 } else {
@@ -59,7 +59,7 @@ function Inventory() {
     // eslint-disable-next-line no-unused-vars
     async function handlePublish(id,isPublished) {
         try {
-            const result = await updateData(`${servers.activities}/api/products/publish/${id}`, {isPublished}, token);
+            const result = await updateData(`${servers.activities}api/products/publish/${id}`, {isPublished}, token);
             if (result.error) {
                 showPopup(result.error,"#00ff00","#fff");
             } else {

@@ -13,7 +13,7 @@ import {useParams} from "react-router-dom";
 import {IoIosArrowForward} from "react-icons/io";
 import React, {useEffect, useState} from "react";
 import { capitalizeLastThreeLetters, fetchData} from "../../utils/helpers.js";
-import {servers} from "../../services/api.js";
+import {servers} from "../../servicesapi.js";
 import {FadeLoader} from "react-spinners";
 import {usePopup} from "../../context/PopupContext.jsx";
 import {useInput} from "../../context/InputContext.jsx";
@@ -31,8 +31,8 @@ export default function ProductPage() {
         async function main() {
             try {
                 setLoader(true);
-                const result = await fetchData(`${servers.activities}/api/inventories/${productID}`, token);
-                const reviews = await fetchData(`${servers.activities}/api/reviews/${productID}`, token)
+                const result = await fetchData(`${servers.activities}api/inventories/${productID}`, token);
+                const reviews = await fetchData(`${servers.activities}api/reviews/${productID}`, token)
                 if (result.error) {
                     showPopup(result.error,"#00ff00","#fff");
                 } else {

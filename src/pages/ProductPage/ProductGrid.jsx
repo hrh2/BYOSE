@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react';
 import {fetchData} from "../../utils/helpers.js";
-import { servers } from "../../services/api.js";
+import { servers } from "../../servicesapi.js";
 import ProductCard01 from "../../components/Product/Cards/ProductCard01.jsx";
 import { MdArrowForward } from 'react-icons/md';
 import {usePopup} from "../../context/PopupContext.jsx";
@@ -28,7 +28,7 @@ const ProductGrid = ({topRated}) => {
         async function main() {
             try {
                 setLoader(true);
-                const result = await fetchData(`${servers.activities}/api/products`, token);
+                const result = await fetchData(`${servers.activities}api/products`, token);
                 if (result.error) {
                     showPopup(result.error,"#00ff00","#fff");
                 } else {
