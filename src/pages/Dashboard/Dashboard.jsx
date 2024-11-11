@@ -75,7 +75,7 @@ function Dashboard() {
                             icon={<FcMoneyTransfer size={40} className={`my-auto`}/>}/>
                 <QuantityBg title={"Total Expense"} value={data.totalExpense}
                             icon={<GiExpense size={40} className={`my-auto`}/>}/>
-                <QuantityBg title={"In Stock"} value={data.inStoreProducts}
+                <QuantityBg title={"In Stock"} value={data.inStockProducts}
                             icon={<MdEventAvailable size={40} className={`my-auto`}/>}/>
                 <QuantityBg title={"Re Stock"} value={data.lowStockProducts}
                             icon={<MdProductionQuantityLimits size={40} className={`my-auto`}/>}/>
