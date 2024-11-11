@@ -31,7 +31,7 @@ export default function ProductPage() {
         async function main() {
             try {
                 setLoader(true);
-                const result = await fetchData(`${servers.activities}/api/inventory/${productID}`, token);
+                const result = await fetchData(`${servers.activities}/api/inventories/${productID}`, token);
                 const reviews = await fetchData(`${servers.activities}/api/reviews/${productID}`, token)
                 if (result.error) {
                     showPopup(result.error,"#00ff00","#fff");
