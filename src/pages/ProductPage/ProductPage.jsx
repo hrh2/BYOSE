@@ -13,7 +13,7 @@ import {useParams} from "react-router-dom";
 import {IoIosArrowForward} from "react-icons/io";
 import React, {useEffect, useState} from "react";
 import { capitalizeLastThreeLetters, fetchData} from "../../utils/helpers.js";
-import {servers} from "../../servicesapi.js";
+import {servers} from "../../services/api.js";
 import {FadeLoader} from "react-spinners";
 import {usePopup} from "../../context/PopupContext.jsx";
 import {useInput} from "../../context/InputContext.jsx";

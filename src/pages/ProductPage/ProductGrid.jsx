@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react';
 import {fetchData} from "../../utils/helpers.js";
-import { servers } from "../../servicesapi.js";
+import { servers } from "../../services/api.js";
 import ProductCard01 from "../../components/Product/Cards/ProductCard01.jsx";
 import { MdArrowForward } from 'react-icons/md';
 import {usePopup} from "../../context/PopupContext.jsx";

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import Axios from 'axios'
-import {servers} from "../../servicesapi.js";
+import {servers} from "../../services/api.js";
 import {usePopup} from "../../context/PopupContext.jsx";
 import {useInput} from "../../context/InputContext.jsx";
 import SearchComponent from "../../components/SearchingSorting/SearchComponent.jsx";

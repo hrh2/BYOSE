@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import ProductCard01 from "../../components/Product/Cards/ProductCard01.jsx";
 import {capitalizeLastThreeLetters, fetchData, shuffleArray} from "../../utils/helpers.js";
-import { servers } from "../../servicesapi.js";
+import { servers } from "../../services/api.js";
 import { FadeLoader } from "react-spinners";
 import { useParams } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";

@@ -1,7 +1,7 @@
 import 'tailwindcss/tailwind.css';
 import React, {useEffect, useState} from "react";
 import {fetchData} from "../../utils/helpers.js";
-import {servers} from "../../servicesapi.js";
+import {servers} from "../../services/api.js";
 import VendorView from "./VendorView.jsx";
 import CustomerView from "./CustomerView.jsx";
 import {usePopup} from "../../context/PopupContext.jsx";

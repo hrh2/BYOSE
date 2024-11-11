@@ -43,7 +43,7 @@ const StaticMapContainer = React.forwardRef((props, ref) => {
                 {/* For debugging: */}
                 {circle && <div className={`z-50`}>{`Circle center: ${circle.center.lat()}, ${circle.center.lng()}`}</div>}
             </Map>
-        <apiProvider>
+        </APIProvider>
     );
 });
 

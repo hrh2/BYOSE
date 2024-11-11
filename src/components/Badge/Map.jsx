@@ -19,6 +19,6 @@ export default function MapContainer({addresses}) {
                     <Pin background={'#FBBC04'} glyphColor={'#000'} borderColor={'#000'} />
                 </AdvancedMarker>
             </Map>
-        <apiProvider>
+        </APIProvider>
     );
 }

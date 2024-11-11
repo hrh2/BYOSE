@@ -9,7 +9,7 @@ import StoreOffers from '../../components/Product/StoreOffers.jsx';
 import OtherProducts from '../../components/Product/OtherProducts';
 import Companies from '../../components/Product/Companies';
 import { fetchData } from '../../utils/helpers';
-import { servers } from '../../servicesapi';
+import { servers } from '../../services/api.js';
 import { FadeLoader } from "react-spinners";
 import {useInput} from "../../context/InputContext.jsx";
 import {usePopup} from "../../context/PopupContext.jsx";

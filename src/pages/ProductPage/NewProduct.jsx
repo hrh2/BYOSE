@@ -3,7 +3,7 @@ import { useState } from "react";
 import { FaPlus } from "react-icons/fa6";
 import { LuLayoutDashboard } from "react-icons/lu";
 import { IoIosArrowForward } from "react-icons/io";
-import { servers } from "../../servicesapi.js";
+import { servers } from "../../services/api.js";
 import { sendData } from "../../utils/helpers.js";
 import { productCategories } from "../../assets/data/productCategories.js";
 import { productUnits } from "../../assets/data/ProductUnits.js";

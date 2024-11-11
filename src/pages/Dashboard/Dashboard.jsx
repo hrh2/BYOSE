@@ -10,7 +10,7 @@ import {LuLayoutDashboard} from "react-icons/lu";
 import ProductCard03 from "../../components/Product/Cards/ProductCard03.jsx";
 import {useEffect, useState} from "react";
 import {fetchData} from "../../utils/helpers.js";
-import {servers} from "../../servicesapi.js";
+import {servers} from "../../services/api.js";
 import {FadeLoader} from "react-spinners";
 import {usePopup} from "../../context/PopupContext.jsx";
 

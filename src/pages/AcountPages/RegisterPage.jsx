@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import Axios from "axios";
-import {servers} from "../../servicesapi.js";
+import {servers} from "../../services/api.js";
 import Dropzone from "react-dropzone";
 import {FaPlus} from "react-icons/fa6";
 import {FaCloudUploadAlt} from "react-icons/fa";

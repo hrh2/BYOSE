@@ -1,7 +1,7 @@
 import Shop01 from "../../components/Product/Cards/Shop01.jsx";
 import React, { useEffect, useState } from "react";
 import { fetchData } from "../../utils/helpers.js";
-import { servers } from "../../servicesapi.js";
+import { servers } from "../../services/api.js";
 import {IoIosArrowForward} from "react-icons/io";
 import {usePopup} from "../../context/PopupContext.jsx";
 import {useInput} from "../../context/InputContext.jsx";

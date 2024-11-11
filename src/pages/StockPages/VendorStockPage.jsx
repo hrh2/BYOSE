@@ -4,7 +4,7 @@ import { IoIosArrowForward } from 'react-icons/io';
 import { GridLoader } from 'react-spinners';
 import ShopProfile from './ShopProfile.jsx';
 import {capitalizeLastThreeLetters, fetchData} from '../../utils/helpers.js';
-import { servers } from '../../servicesapi.js';
+import { servers } from '../../services/api.js';
 import {shop} from "../../assets/data/shop.js";
 import {usePopup} from "../../context/PopupContext.jsx";
 import {useInput} from "../../context/InputContext.jsx";

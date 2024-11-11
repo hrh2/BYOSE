@@ -5,7 +5,7 @@ import { LuLayoutDashboard } from "react-icons/lu";
 import { IoIosArrowForward } from "react-icons/io";
 import { useEffect, useState } from "react";
 import {fetchData, updateData} from "../../utils/helpers.js";
-import { servers } from "../../servicesapi.js";
+import { servers } from "../../services/api.js";
 import { Button } from "flowbite-react";
 import {FadeLoader} from "react-spinners";
 import {FaEdit} from "react-icons/fa";
