@@ -1,8 +1,8 @@
 // services/currencyService.js
 import axios from 'axios';
 
-const TOKEN = import.meta.env.CURRENCY_CONVENTION_BASE_URL_TOKEN;
-const BASE_URL = import.meta.env.CURRENCY_CONVENTION_BASE_URL;
+const TOKEN = import.meta.env.VITE_CURRENCY_CONVENTION_BASE_URL_TOKEN;
+const BASE_URL = import.meta.env.VITE_CURRENCY_CONVENTION_BASE_URL;
 
 export const getExchangeRates = async () => {
     try {
