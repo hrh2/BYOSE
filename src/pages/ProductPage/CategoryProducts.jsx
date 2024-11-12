@@ -81,7 +81,7 @@ const CategoryProducts = () => {
                     </div>
                 </>
             ) : (
-                <>
+                !loader&&<>
                     <h2 className="text-2xl font-bold mb-4 px-3">No Products Found for &quot;<i
                         className={`bg-yellow-300`}>{category}</i>&quot;</h2>
                     <p className="mb-4 px-3">It seems we don&apos;t have any products in this category at the moment.
