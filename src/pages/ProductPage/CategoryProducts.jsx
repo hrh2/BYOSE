@@ -26,7 +26,7 @@ const CategoryProducts = () => {
         async function main() {
             try {
                 setLoader(true);
-                const result = await fetchData(`${servers.activities}/api/products`, token);
+                const result = await fetchData(`${servers.activities}api/products`, token);
                 if (result.error) {
                     showPopup(result.error,"#00ff00","#fff");
                 } else {
