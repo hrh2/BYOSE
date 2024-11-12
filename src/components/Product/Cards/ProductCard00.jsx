@@ -34,7 +34,7 @@ export default function ProductCard00({s,badge,inventory}) {
         {/* eslint-disable-next-line react/prop-types */}
       <p className="text-[#4B5563] dark:text-[#c5bbac] text-[16px] font-normal"> {inventory?inventory.product.description:'...'}.</p>
         {/* eslint-disable-next-line react/prop-types */}
-      <Discount current={inventory?inventory.product.sellingPrice:0} old={inventory?inventory.product.sellingPrice+10:0} s={"text-lg py-3"}/>
+      <Discount current={inventory?inventory.product.sellingPrice:0}  s={"text-lg py-3"}/>
       <div className="py-3 w-full  mx-auto">
           {/* eslint-disable-next-line react/prop-types */}
         <p className=" text-[#9CA3AF] text-[14px]">{inventory&&inventory.quantity<=3?"This product is about to run out":"Enough"}</p>

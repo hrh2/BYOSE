@@ -35,7 +35,7 @@ export default function ProductCard01({s,badge,inventory}) {
                 </div>
                 <div>
                     {/* eslint-disable-next-line react/prop-types */}
-                    <Discount current={inventory?inventory.product.sellingPrice:0} old={inventory?inventory.product.sellingPrice+12:0} className={"text-lg py-3"}/>
+                    <Discount current={inventory?inventory.product.sellingPrice:0}  className={"text-lg py-3"}/>
                 </div>
             </div>
         </div>
