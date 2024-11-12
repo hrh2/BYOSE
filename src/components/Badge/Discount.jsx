@@ -9,7 +9,7 @@ export default function Discount({current,className}) {
                   <Currency amount={current} targetCurrency={'RWF'}/>
               </p>
               <p className='text-xs sm:text-sm md:text-lg align-text-bottom line-through pt-2'>
-                  <Currency amount={(current-(current*0.13))} targetCurrency={'RWF'}/>
+                  <Currency amount={(current+(current*0.13))} targetCurrency={'RWF'}/>
               </p>
     </div>
   )
